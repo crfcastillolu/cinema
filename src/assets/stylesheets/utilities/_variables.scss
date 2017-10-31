@@ -1,0 +1,151 @@
+
+/*------------------------------------*\
+  #VARIABLES
+\*------------------------------------*/
+
+
+
+/* Browser support fallbacks.
+ ========================================================================== */
+
+
+
+/**
+ * Fonts face.
+ */
+
+// @include font-face('Work Sans', 'WorkSans-Light', 300);
+// @include font-face('Work Sans', 'WorkSans-Regular', 400);
+// @include font-face('Work Sans', 'WorkSans-Medium', 500);
+
+// @include font-face('Eczar', 'Eczar-Regular', 400);
+// @include font-face('Eczar', 'Eczar-Bold', 700);
+
+
+
+/**
+ * Fonts stacks.
+ */
+
+$stack-sans:        Arial, "Helvetica Neue", Helvetica, sans-serif !default;
+$stack-serif:       "Times New Roman", Times, serif !default;
+$font-stack-sans:   "Work Sans", $stack-sans; // Custom sans serif font.
+$font-stack-serif:  "Eczar", $stack-serif; // Custom serif font.
+
+
+
+
+
+/* Fonts.
+ ========================================================================== */
+
+
+
+/**
+ * Modular scale.
+ */
+
+$modularscale: (
+  base: 16px,
+  ratio: $major-third,
+  a: (
+    ratio: $major-third
+  ),
+  640px: (
+    base: 10.24px,
+    ratio: $minor-third
+  ),
+  1024px: (
+    base: 16px
+  )
+);
+
+
+
+/**
+ * Font properties.
+ */
+
+$base-font-size:      ms(0);
+$base-line-height:    1.5;
+
+
+
+
+
+/* Colors.
+ ========================================================================== */
+
+
+/**
+ * Color defaults.
+ */
+
+$color-white:         #fff;
+$color-grey:          #607D8B;
+$color-base:          #263238;
+$color-primary:       #4fc08d;
+$color-secondary:     #35495E;
+
+
+
+/**
+ * Color states.
+ */
+
+$color-accent:        #4fc08d;
+$color-info:          #0076FF;
+$color-success:       #44DB5E;
+$color-alert:         #FE3824;
+$color-warning:       #FFCD00;
+
+
+
+/**
+ * Color palette modifiers.
+ */
+
+$palettes: (
+  black: (
+    base:       $color-base,
+    50:         #ECEFF1,
+    100:        #CFD8DC,
+    200:        #B0BEC5,
+    300:        #90A4AE,
+    400:        #78909C,
+    500:        #607D8B,
+    600:        #546E7A,
+    700:        #455A64,
+    800:        #37474F,
+    900:        #263238
+  )
+);
+
+
+
+
+
+/* Utilities.
+ ========================================================================== */
+
+/**
+ * Animations.
+ */
+
+$base-duration:       .4s;
+$base-timing:         cubic-bezier(0.215, 0.61, 0.355, 1);;
+
+
+
+/**
+ * Z-index list.
+ */
+
+$zindex-navbar:            1000;
+$zindex-dropdown:          1000;
+$zindex-popover:           1060;
+$zindex-tooltip:           1070;
+$zindex-navbar-fixed:      1030;
+$zindex-modal-background:  1040;
+$zindex-modal:             1050;
+$zindex-loading:           1080;
