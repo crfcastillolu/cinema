@@ -15,14 +15,13 @@ export const store = new Vuex.Store({
   },
   actions: {
     loadCities ({commit}) {
-      console.log('response.data')
       axios.get('https://cors-anywhere.herokuapp.com/http://static.pulzo.com/pulzo-dev/cinema/grid/10986.json')
         .then(response => {
           // JSON responses are automatically parsed.
           commit('setLoadedCities', response.data)
         })
-        .catch(e => {
-          console.log(e)
+        .catch((error) => {
+          console.log(error)
         })
     }
   },
