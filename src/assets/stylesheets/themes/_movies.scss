@@ -1,0 +1,80 @@
+
+/*------------------------------------*\
+  #MOVIES
+\*------------------------------------*/
+
+.movie {
+
+  @include e(availability) {
+
+    @include m(active) {
+      color: red;
+    }
+  }
+
+  @include e(tile) {
+    background-color: $color-white;
+    box-sizing: border-box;
+    border: 1px solid palette(black, 400);
+    margin-bottom: em(24px);
+  }
+  
+  @include e(figure) {
+    background: $color-white;
+    height: em(380px);
+    // width: em(260px);
+    width: 100%;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  @include e(textWrapper) {
+    padding: em(12px);
+  }
+
+  @include e(title) {
+    @include ms-respond(font-size, 2);
+    font-family: $font-stack-condensed;
+    font-weight: 400;
+    margin-bottom: em(12px, ms(2));
+  }
+
+  @include e(details) {
+    @include ms-respond(font-size, 0);
+    font-weight: 300;
+  }
+
+  @include e(btn) {
+    @include ms-respond(font-size, 0);
+    background-color: $color-accent;
+    color: $color-white;
+    border-radius: em(8px);
+
+    &:hover {
+      background-color: lighten($color-accent, 10%);
+    }
+  }
+}
+
+/* Enter and leave animations can use different */
+/* durations and timing functions.              */
+.slide-fade-enter-active {
+  @extend %transition;
+}
+.slide-fade-leave-active {
+  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to
+/* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateY(24px);
+  opacity: 0;
+}
+
+@for $i from 1 to 10 {
+  .movie__wrapper .cell:nth-child(#{$i}) { animation-delay: $i * .12s; }
+}
+

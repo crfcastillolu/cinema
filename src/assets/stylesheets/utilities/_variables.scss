@@ -29,8 +29,8 @@
 
 $stack-sans:        Arial, "Helvetica Neue", Helvetica, sans-serif !default;
 $stack-serif:       "Times New Roman", Times, serif !default;
-$font-stack-sans:   "Work Sans", $stack-sans; // Custom sans serif font.
-$font-stack-serif:  "Eczar", $stack-serif; // Custom serif font.
+$font-stack-sans:   "Roboto", $stack-sans; // Custom sans serif font.
+$font-stack-condensed:  "Roboto Condensed", $stack-serif; // Custom serif font.
 
 
 
@@ -82,7 +82,7 @@ $base-line-height:    1.5;
  */
 
 $color-white:         #fff;
-$color-grey:          #607D8B;
+$color-grey:          #d5d5d5;
 $color-base:          #263238;
 $color-primary:       #4fc08d;
 $color-secondary:     #35495E;
@@ -93,7 +93,7 @@ $color-secondary:     #35495E;
  * Color states.
  */
 
-$color-accent:        #4fc08d;
+$color-accent:        #4A90E2;
 $color-info:          #0076FF;
 $color-success:       #44DB5E;
 $color-alert:         #FE3824;
@@ -108,11 +108,11 @@ $color-warning:       #FFCD00;
 $palettes: (
   black: (
     base:       $color-base,
-    50:         #ECEFF1,
+    50:         #EBEBEC,
     100:        #CFD8DC,
     200:        #B0BEC5,
     300:        #90A4AE,
-    400:        #78909C,
+    400:        #d5d5d5,
     500:        #607D8B,
     600:        #546E7A,
     700:        #455A64,
