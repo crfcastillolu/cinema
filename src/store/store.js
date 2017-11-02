@@ -11,7 +11,7 @@ export const store = new Vuex.Store({
   },
   mutations: {
     setLoadedCities (state, payload) {
-      state.loadedCities = payload
+      state.loadedCities.push(payload)
     },
     setLoading (state, payload) {
       state.loading = payload
@@ -22,8 +22,12 @@ export const store = new Vuex.Store({
       axios.get('https://cors-anywhere.herokuapp.com/http://static.pulzo.com/pulzo-dev/cinema/grid/10986.json')
         .then(response => {
           // JSON responses are automatically parsed.
-          commit('setLoading', false)
           commit('setLoadedCities', response.data)
+          axios.get('https://cors-anywhere.herokuapp.com/http://static.pulzo.com/pulzo-dev/cinema/grid/13421.json')
+            .then(response => {
+              commit('setLoading', false)
+              commit('setLoadedCities', response.data)
+            })
         })
         .catch((error) => {
           console.log(error)

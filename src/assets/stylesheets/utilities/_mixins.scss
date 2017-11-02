@@ -11,13 +11,7 @@
 @mixin font-face($font-name, $file-name, $weight: normal, $style: normal) { 
   @font-face {
     font-family: quote($font-name);
-    src: url('src/assets/fonts/#{$file-name}' + '.eot');
-    src: url('src/assets/fonts/#{$file-name}' + '.eot?#iefix') format('embedded-opentype'),
-         url('src/assets/fonts/#{$file-name}' + '.woff') format('woff'),
-
-         url('src/assets/fonts/#{$file-name}' + '.ttf') format('truetype'),
-
-         url('src/assets/fonts/#{$file-name}' + '.svg') format('svg');
+    src: url('assets/fonts/#{$file-name}' + '.ttf') format('truetype');
     font-weight: $weight;
     font-style: $style;
   }

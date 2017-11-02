@@ -1,7 +1,6 @@
 <template>
   <div id="app" class="grid-container">
     <router-view/>
-    <img src="./assets/logo.png">
   </div>
 </template>
 

@@ -14,12 +14,16 @@
  * Fonts face.
  */
 
-// @include font-face('Work Sans', 'WorkSans-Light', 300);
-// @include font-face('Work Sans', 'WorkSans-Regular', 400);
-// @include font-face('Work Sans', 'WorkSans-Medium', 500);
+@include font-face('Roboto', 'Roboto-Light', 300);
+@include font-face('Roboto', 'Roboto-Regular', 400);
+@include font-face('Roboto', 'Roboto-Medium', 500);
+@include font-face('Roboto', 'Roboto-Bold', 700);
 
-// @include font-face('Eczar', 'Eczar-Regular', 400);
-// @include font-face('Eczar', 'Eczar-Bold', 700);
+@include font-face('Roboto Condensed', 'RobotoCondensed-Light', 300);
+@include font-face('Roboto Condensed', 'RobotoCondensed-Regular', 400);
+@include font-face('Roboto Condensed', 'RobotoCondensed-Bold', 700);
+
+
 
 
 
