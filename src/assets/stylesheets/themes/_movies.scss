@@ -5,45 +5,10 @@
 
 .movie {
 
-  @include e(availability) {
-    @include ms-respond(font-size, 0);
-    color: palette(black, 600);
-    font-weight: 300;
-
-    @include m(active) {
-      color: palette(black, 900);
-      font-weight: 400;
-      position: relative;
-
-      &::before {
-        position: absolute;
-        content: '';
-        bottom: em(-12px);
-        width: 0; 
-        height: 0; 
-        border-left: em(6px) solid transparent;
-        border-right: em(6px) solid transparent;
-        border-top: em(6px) solid $color-secondary;
-        left: calc(50% - #{em(6px)});
-        transform: translateY(-50%);
-      }
-
-      &::after {
-        position: absolute;
-        content: '';
-        bottom: em(-4px);
-        width: 100%;
-        height: em(2px);
-        left: 0;
-        background-color: $color-secondary;
-      }
-    }
-  }
-
   @include e(tile) {
     background-color: $color-white;
     box-sizing: border-box;
-    border: 1px solid palette(black, 400);
+    border: 1px solid palette(black, 300);
     margin-bottom: em(24px);
   }
   
@@ -68,14 +33,17 @@
   }
 
   @include e(textWrapper) {
-    padding: em(12px);
+    padding: em(12px) em(16px);
   }
 
   @include e(title) {
-    @include ms-respond(font-size, 2);
+    @include ms-respond(font-size, 5);
+    line-height: em(28px, ms(5));
     font-family: $font-stack-condensed;
     font-weight: 400;
-    margin-bottom: em(12px, ms(2));
+    color: palette(black, 800);
+    margin-bottom: em(8px, ms(5));
+    min-height: em(56px, ms(5));
   }
 
   @include e(details) {
@@ -84,13 +52,35 @@
   }
 
   @include e(btn) {
-    @include ms-respond(font-size, 0);
+    @include ms-respond(font-size, -1);
+    font-family: $font-stack-condensed;    
+    line-height: em(16px, ms(-1));
     background-color: $color-accent;
     color: $color-white;
-    border-radius: em(8px);
+    border-radius: em(8px, ms(-1));
+    padding: em(6px, ms(-1)) em(24px, ms(-1)) em(6px, ms(-1)) em(10px, ms(-1));
+    position: relative;
 
     &:hover {
       background-color: lighten($color-accent, 10%);
+    }
+
+    &::after {      
+      @extend %transition;
+      font-family: 'Material Icons';
+      line-height: em(22px, ms(5));
+      content: "keyboard_arrow_right";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      font-size: ms(5);
+      z-index: 1;
+      height: em(22px, ms(5));
+      margin: auto;
+      display: block;
+      color: $color-white;
+      pointer-events: none;
     }
   }
 }

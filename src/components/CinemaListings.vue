@@ -4,38 +4,55 @@
       {{ loading }}
     </div>
 
-    <nav>
+    <header class="header__wrapper">
       <ul class="grid-x">
         <li class="cell small-12 medium-6">
           <h1 class="header__title">Mostrando películas en:</h1>
-          <select
-            v-model="city">
-            <option
-              v-for="value in stateCities"
-              :value="value.city">
-              {{ value.city | uppercase }}
-            </option>
-          </select><!-- End. Select city. -->
+          <div class="header__select">            
+            <select
+              v-model="city">
+              <option
+                class="material-icons"
+                v-for="value in stateCities"
+                :value="value.city">
+                {{ value.city | uppercase }}
+              </option>
+            </select><!-- End. Select city. -->
+          </div>
         </li>
         <li class="cell small-12 medium-6">
-          <ul class="grid-x align-right">
-            <li class="cell shrink">
-              <a
-                class="movie__availability"
-                :class="{ 'movie__availability--active': availability == 'billboard' }"
-                @click.prevent="filter('billboard')">{{ $t('common.billboard') | capitalize }}</a>
+          <ul class="grid-y grid-frame">
+            <li class="cell auto">
+              <figure>
+                <img
+                  class="header__powered"
+                  src="http://static.pulzo.com/cinepapaya/fandango.png" alt="">
+              </figure>
             </li>
-            <li class="cell shrink">
-              <a
-                class="movie__availability"
-                :class="{ 'movie__availability--active': availability == 'soon' }"
-                @click.prevent="filter('soon')">{{ $t('common.soon') | capitalize }}</a>
+            <li class="cell shrink align-bottom">              
+              <ul class="grid-x align-right">
+                <li class="cell shrink">
+                  <a
+                    class="header__availability"
+                    :class="{ 'header__availability--active': availability == 'billboard' }"
+                    @click.prevent="filter('billboard')">{{ $t('common.billboard') | capitalize }}</a>
+                </li>
+                <li class="cell shrink">
+                  <div class="header__availability header__availability--pleca">|</div>
+                </li>
+                <li class="cell shrink">
+                  <a
+                    class="header__availability"
+                    :class="{ 'header__availability--active': availability == 'soon' }"
+                    @click.prevent="filter('soon')">{{ $t('common.soon') | capitalize }}</a>
+                </li>
+              </ul><!-- End. Filter availability. -->
             </li>
-          </ul><!-- End. Filter availability. -->
+          </ul>
         </li>
       </ul>
 
-    </nav><!-- End. Filters. -->
+    </header><!-- End. Filters. -->
 
     <div v-for="city in filterBy(stateCities, city, 'city')">
       <transition-group
@@ -49,10 +66,10 @@
           <article class="movie__tile">          
             <figure class="movie__figure">
               <a :href="movie.baseMovieUrl">
-                <progressive-img
+                <!-- <progressive-img
                   :src="movie.image"
                   fallback="https://picsum.photos/260/380?image=11"
-                  :alt="movie.name | capitalize" />
+                  :alt="movie.name | capitalize" /> -->
                 <figcaption class="srt">{{ movie.name | capitalize }}</figcaption>
               </a>
             </figure>
@@ -92,7 +109,7 @@
     name: 'CinemaListings',
     data () {
       return {
-        city: 'Bogotá', // set default city to 'Bogotá'.
+        city: 'Barranquilla', // set default city to 'Bogotá'.
         availability: 'billboard' // set default availability to 'billboard'.
       }
     },

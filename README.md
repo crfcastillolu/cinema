@@ -30,3 +30,5 @@ Dependencies installed:
   Centralized State Management for Vue.js
 + vue-progressive-image:
   Vue progressive image loading plugin.
++ material-design-icons:
+  Material design icons are the official icon set from Google that are designed under the material design guidelines.
