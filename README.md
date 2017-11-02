@@ -23,10 +23,10 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 Dependencies installed:
 + sass-loader
 + modularscale-sass
-+ vue-select:
-  A native Vue.js select component that provides similar functionality to Select2 without the overhead of jQuery.
 + vue2-filters:
   A collection of standard filters
 + axios
 + vuex:
   Centralized State Management for Vue.js
++ vue-progressive-image:
+  Vue progressive image loading plugin.

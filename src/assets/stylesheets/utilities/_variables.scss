@@ -51,9 +51,9 @@ $font-stack-condensed:  "Roboto Condensed", $stack-serif; // Custom serif font.
 
 $modularscale: (
   base: 16px,
-  ratio: $major-third,
+  ratio: $major-second,
   a: (
-    ratio: $major-third
+    ratio: $major-second
   ),
   640px: (
     base: 10.24px,
@@ -89,7 +89,7 @@ $color-white:         #fff;
 $color-grey:          #d5d5d5;
 $color-base:          #263238;
 $color-primary:       #4fc08d;
-$color-secondary:     #35495E;
+$color-secondary:     #f09d29;
 
 
 

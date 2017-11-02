@@ -7,25 +7,27 @@
     <nav>
       <ul class="grid-x">
         <li class="cell small-12 medium-6">
-          <div>Mostrando películas en:</div>
+          <h1 class="header__title">Mostrando películas en:</h1>
           <select
             v-model="city">
             <option
               v-for="value in stateCities"
               :value="value.city">
-              {{ value.city }}
+              {{ value.city | uppercase }}
             </option>
           </select><!-- End. Select city. -->
         </li>
         <li class="cell small-12 medium-6">
-          <ul class="grid-x">
-            <li class="cell small-6">
+          <ul class="grid-x align-right">
+            <li class="cell shrink">
               <a
+                class="movie__availability"
                 :class="{ 'movie__availability--active': availability == 'billboard' }"
                 @click.prevent="filter('billboard')">{{ $t('common.billboard') | capitalize }}</a>
             </li>
-            <li class="cell small-6">
+            <li class="cell shrink">
               <a
+                class="movie__availability"
                 :class="{ 'movie__availability--active': availability == 'soon' }"
                 @click.prevent="filter('soon')">{{ $t('common.soon') | capitalize }}</a>
             </li>
@@ -46,10 +48,13 @@
           v-bind:key="index">
           <article class="movie__tile">          
             <figure class="movie__figure">
-              <img
-                :src="movie.image"
-                :alt="movie.name | capitalize">
-              <figcaption class="srt">{{ movie.name | capitalize }}</figcaption>
+              <a :href="movie.baseMovieUrl">
+                <progressive-img
+                  :src="movie.image"
+                  fallback="https://picsum.photos/260/380?image=11"
+                  :alt="movie.name | capitalize" />
+                <figcaption class="srt">{{ movie.name | capitalize }}</figcaption>
+              </a>
             </figure>
             <div class="movie__textWrapper">
               <h2 class="movie__title">
@@ -71,7 +76,7 @@
                 <div class="cell small-5">
                   <a
                     class="movie__btn"
-                    :href="movie.baseMovieUrl">Conocer más</a>              
+                    :href="movie.baseMovieUrl">Conoce más</a>              
                 </div>
               </div>
             </div>

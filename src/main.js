@@ -4,8 +4,8 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import VueI18n from 'vue-i18n'
-import vSelect from 'vue-select'
 import Vue2Filters from 'vue2-filters'
+import VueProgressiveImage from 'vue-progressive-image'
 import { store } from './store/store'
 import { locales } from './locales/locales'
 
@@ -14,6 +14,7 @@ Vue.config.productionTip = false
 /* Installation. */
 Vue.use(VueI18n)
 Vue.use(Vue2Filters)
+Vue.use(VueProgressiveImage)
 
 var i18n = new VueI18n({
   locale: 'es',
@@ -24,7 +25,6 @@ var i18n = new VueI18n({
 })
 
 /* Global components. */
-Vue.component('v-select', vSelect)
 
 /* eslint-disable no-new */
 new Vue({

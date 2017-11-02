@@ -1,0 +1,17 @@
+
+/*------------------------------------*\
+  #FORMS
+\*------------------------------------*/
+
+select {
+  color: palette(black, 400);
+  border: none;
+  border-bottom: 2px solid $color-secondary;
+  border-radius: 0;
+  background: transparent url("http://i62.tinypic.com/15xvbd5.png") no-repeat scroll calc(100% - #{em(24px)}) center;
+  -webkit-appearance: none;
+
+  &:focus {
+    outline: none;
+  }
+}

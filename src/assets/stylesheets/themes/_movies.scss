@@ -6,9 +6,37 @@
 .movie {
 
   @include e(availability) {
+    @include ms-respond(font-size, 0);
+    color: palette(black, 600);
+    font-weight: 300;
 
     @include m(active) {
-      color: red;
+      color: palette(black, 900);
+      font-weight: 400;
+      position: relative;
+
+      &::before {
+        position: absolute;
+        content: '';
+        bottom: em(-12px);
+        width: 0; 
+        height: 0; 
+        border-left: em(6px) solid transparent;
+        border-right: em(6px) solid transparent;
+        border-top: em(6px) solid $color-secondary;
+        left: calc(50% - #{em(6px)});
+        transform: translateY(-50%);
+      }
+
+      &::after {
+        position: absolute;
+        content: '';
+        bottom: em(-4px);
+        width: 100%;
+        height: em(2px);
+        left: 0;
+        background-color: $color-secondary;
+      }
     }
   }
 
@@ -24,11 +52,18 @@
     height: em(380px);
     // width: em(260px);
     width: 100%;
+    overflow: hidden;
 
-    img {
+    .progressive-image {
       height: 100%;
       width: 100%;
       object-fit: cover;
+      @extend %transition;
+
+
+      &:hover {
+        transform: scale(1.05); 
+      }
     }
   }
 
