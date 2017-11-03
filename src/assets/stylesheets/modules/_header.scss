@@ -13,8 +13,27 @@
   }
 
   @include e(powered) {
-    display: block;
-    margin-left: auto;
+    pointer-events: none;
+
+    img {
+      display: block;
+      margin: em(12px) auto em(8px);
+
+      @include breakpoint(tablet-portrait-up) {
+        margin: 0 0 0 auto;
+      }
+    }
+  }
+
+  @include e(tabs) {
+
+    .grid-x {
+      justify-content: center;
+
+      @include breakpoint(tablet-portrait-up) {
+        justify-content: flex-end;
+      }
+    }
   }
 
   @include e(title) {

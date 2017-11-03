@@ -6,15 +6,28 @@ import router from './router'
 import VueI18n from 'vue-i18n'
 import Vue2Filters from 'vue2-filters'
 import VueProgressiveImage from 'vue-progressive-image'
+import VueProgressBar from 'vue-progressbar'
 import { store } from './store/store'
 import { locales } from './locales/locales'
 
 Vue.config.productionTip = false
 
+const options = {
+  color: '#4A90E2',
+  failedColor: '#FFCD00',
+  thickness: '4px',
+  transition: {
+    speed: '0.2s',
+    opacity: '0.6s',
+    termination: 300
+  }
+}
+
 /* Installation. */
 Vue.use(VueI18n)
 Vue.use(Vue2Filters)
 Vue.use(VueProgressiveImage)
+Vue.use(VueProgressBar, options)
 
 var i18n = new VueI18n({
   locale: 'es',

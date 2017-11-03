@@ -5,25 +5,45 @@
 
 .movie {
 
+  @include e(wrapper) {
+    margin: 0 em(4px);
+
+    @include breakpoint(tablet-portrait-up) {
+      margin: 0 em(48px);
+    }
+  }
+
   @include e(tile) {
     background-color: $color-white;
     box-sizing: border-box;
     border: 1px solid palette(black, 300);
-    margin-bottom: em(24px);
+    margin-bottom: em(12px);
   }
   
   @include e(figure) {
     background: $color-white;
-    height: em(380px);
+    height: em(144px);
     // width: em(260px);
     width: 100%;
     overflow: hidden;
+    background-image: url('./assets/images/noimage-bg.jpg');
+    background-size: cover;
+    background-position: center center;
+
+    @include breakpoint(tablet-portrait-up) {
+      height: em(388px);
+    }
 
     .progressive-image {
       height: 100%;
       width: 100%;
       object-fit: cover;
       @extend %transition;
+
+      img {
+        object-fit: cover;
+        height: 100% !important;
+      }
 
 
       &:hover {
@@ -49,9 +69,13 @@
   @include e(details) {
     @include ms-respond(font-size, 0);
     font-weight: 300;
+    line-height: em(22px, ms(0));
+    color: palette(black, 700);
+    max-height: em(22px, ms(0));
   }
 
   @include e(btn) {
+    display: block;
     @include ms-respond(font-size, -1);
     font-family: $font-stack-condensed;    
     line-height: em(16px, ms(-1));
@@ -60,6 +84,7 @@
     border-radius: em(8px, ms(-1));
     padding: em(6px, ms(-1)) em(24px, ms(-1)) em(6px, ms(-1)) em(10px, ms(-1));
     position: relative;
+    margin-left: em(8px, ms(-1));
 
     &:hover {
       background-color: lighten($color-accent, 10%);
@@ -97,9 +122,5 @@
 /* .slide-fade-leave-active below version 2.1.8 */ {
   transform: translateY(24px);
   opacity: 0;
-}
-
-@for $i from 1 to 10 {
-  .movie__wrapper .cell:nth-child(#{$i}) { animation-delay: $i * .12s; }
 }
 

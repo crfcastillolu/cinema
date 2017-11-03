@@ -18,7 +18,8 @@ export const store = new Vuex.Store({
     }
   },
   actions: {
-    loadCities ({commit}) {
+    loadCities ({commit}, vm) {
+      vm.$Progress.start()
       axios.get('https://cors-anywhere.herokuapp.com/http://static.pulzo.com/pulzo-dev/cinema/grid/10986.json')
         .then(response => {
           // JSON responses are automatically parsed.
@@ -27,11 +28,13 @@ export const store = new Vuex.Store({
             .then(response => {
               commit('setLoading', false)
               commit('setLoadedCities', response.data)
+              vm.$Progress.finish()
             })
         })
         .catch((error) => {
           console.log(error)
           commit('setLoading', true)
+          vm.$Progress.fail()
         })
     }
   },

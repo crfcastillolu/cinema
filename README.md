@@ -32,3 +32,5 @@ Dependencies installed:
   Vue progressive image loading plugin.
 + material-design-icons:
   Material design icons are the official icon set from Google that are designed under the material design guidelines.
++ vue-progressbar:
+  A lightweight progress bar for vue.

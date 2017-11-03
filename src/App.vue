@@ -1,6 +1,8 @@
 <template>
   <div id="app" class="grid-container">
     <router-view/>
+    <!-- set progressbar -->
+    <vue-progress-bar></vue-progress-bar>
   </div>
 </template>
 
