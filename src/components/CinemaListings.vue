@@ -138,7 +138,6 @@
     },
     created () {
       this.$store.dispatch('loadCities', this)
-      console.log(this.stateCities)
     },
     methods: {
       filter: function (availability) {
