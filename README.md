@@ -2,6 +2,18 @@
 
 > Cinema filter.
 
+
+## For this project you will need the following
+
+``` bash
+# git installed locally
+
+# node and npm installed locally
+
+# vue-cli installed locally
+npm install vue-cli -g
+```
+
 ## Build Setup
 
 ``` bash
