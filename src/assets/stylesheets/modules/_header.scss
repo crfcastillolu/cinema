@@ -109,6 +109,31 @@
     line-height: em(40px, ms(1));
     color: palette(black, 600);
     font-weight: 300;
+    position: relative;
+
+    &::after {
+      position: absolute;
+      content: '';
+      bottom: em(-4px, ms(1));
+      height: em(2px, ms(1));
+      left: 0;
+      background-color: $color-secondary;
+      width: 100%;
+      max-width: 100%;  
+      transform: scaleX(0);
+      transform-origin: right center;
+      transition: transform $base-duration $base-timing;
+      z-index: 1;
+    }
+
+    &:hover {
+      color: palette(black, 800);
+
+      &::after {
+        transform: none;
+        transform-origin: left center;
+      }
+    }
 
     @include m(pleca) {
       margin: 0 em(10px);
@@ -118,12 +143,11 @@
     @include m(active) {
       color: palette(black, 800);
       font-weight: 400;
-      position: relative;
 
       &::before {
         position: absolute;
         content: '';
-        bottom: em(-12px, ms(1));
+        bottom: em(-11px, ms(1));
         width: 0; 
         height: 0; 
         border-left: em(10px, ms(1)) solid transparent;
@@ -134,13 +158,8 @@
       }
 
       &::after {
-        position: absolute;
-        content: '';
-        bottom: em(-4px, ms(1));
-        width: 100%;
-        height: em(2px, ms(1));
-        left: 0;
-        background-color: $color-secondary;
+        transform: none;
+        transform-origin: left center;
       }
     }
   }
